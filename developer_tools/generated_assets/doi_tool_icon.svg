@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#ff6b6b"/>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGradient)"/>
+  
+  <!-- ペーパースタック -->
+  <g transform="translate(80, 120)" filter="url(#shadow)">
+    <!-- 後ろの紙 -->
+    <rect x="0" y="0" width="180" height="240" rx="8" fill="#f8f9fa" 
+          transform="rotate(-8 90 120)"/>
+    <!-- 中間の紙 -->
+    <rect x="20" y="-10" width="180" height="240" rx="8" fill="#ffffff" 
+          transform="rotate(3 110 110)"/>
+    <!-- 前の紙 -->
+    <rect x="40" y="-5" width="180" height="240" rx="8" fill="#ffffff" 
+          transform="rotate(-2 130 115)"/>
+    
+    <!-- 論文の線（テキストを表現） -->
+    <g fill="#e9ecef">
+      <rect x="60" y="30" width="140" height="3" rx="1"/>
+      <rect x="60" y="45" width="120" height="3" rx="1"/>
+      <rect x="60" y="60" width="160" height="3" rx="1"/>
+      <rect x="60" y="75" width="100" height="3" rx="1"/>
+      <rect x="60" y="105" width="150" height="3" rx="1"/>
+      <rect x="60" y="120" width="110" height="3" rx="1"/>
+      <rect x="60" y="135" width="140" height="3" rx="1"/>
+    </g>
+  </g>
+  
+  <!-- DOIテキスト -->
+  <g transform="translate(290, 180)" filter="url(#shadow)">
+    <rect x="0" y="0" width="120" height="80" rx="15" fill="#2c3e50"/>
+    <text x="60" y="55" font-family="SF Mono, Monaco, Consolas, monospace" 
+          font-size="36" font-weight="bold" fill="white" 
+          text-anchor="middle" letter-spacing="2px">DOI</text>
+  </g>
+  
+  <!-- 接続線 -->
+  <g filter="url(#glow)">
+    <path d="M 260 240 Q 320 200 370 220" stroke="#ff6b6b" stroke-width="8" 
+          fill="none" stroke-dasharray="15,10" opacity="0.8"/>
+    
+    <!-- 接続ドット -->
+    <circle cx="260" cy="240" r="12" fill="#ff6b6b"/>
+    <circle cx="320" cy="200" r="10" fill="#ff6b6b"/>
+    <circle cx="370" cy="220" r="12" fill="#ff6b6b"/>
+  </g>
+  
+  <!-- 光の効果 -->
+  <circle cx="140" cy="140" r="3" fill="white" opacity="0.6"/>
+  <circle cx="350" cy="100" r="2" fill="white" opacity="0.4"/>
+</svg>

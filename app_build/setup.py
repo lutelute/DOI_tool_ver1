@@ -69,7 +69,7 @@ OPTIONS = {
     ],
     'excludes': ['matplotlib', 'numpy'],
     'resources': [],
-    'iconfile': None,
+    'iconfile': 'icons/DOI_Tool.icns',
 }
 
 setup(
